@@ -1,0 +1,1384 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap');
+
+
+/* =====================================================
+   DEADSTOCK CO.
+   FULL STYLE.CSS
+   ===================================================== */
+
+
+/* ================= VARIABLES ================= */
+
+:root {
+    --background: #ffffff;
+    --black: #111111;
+    --yellow: #ffffff;
+    --grey: #777777;
+    --border: #111111;
+}
+
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--black);
+    font-family: "Space Mono", monospace;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   TOP BAR
+   ===================================================== */
+
+.top-bar {
+    height: 34px;
+    background: var(--black);
+    color: var(--background);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.top-track {
+    display: inline-block;
+    animation: ticker 25s linear infinite;
+}
+
+@keyframes ticker {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+
+.navbar {
+    height: 82px;
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4vw;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 30px;
+    letter-spacing: -2px;
+}
+
+.logo span {
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 0;
+    margin-left: 5px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.navbar nav a:hover {
+    background: var(--black);
+    color: var(--background);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-button {
+    background: transparent;
+    border: 2px solid var(--black);
+    padding: 10px 15px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.cart-button:hover {
+    background: var(--black);
+    color: var(--background);
+}
+
+.cart-button span {
+    background: var(--black);
+    color: var(--background);
+    padding: 3px 6px;
+    margin-left: 5px;
+}
+
+.cart-button:hover span {
+    background: var(--background);
+    color: var(--black);
+}
+
+.menu-button {
+    display: none;
+    border: 0;
+    background: transparent;
+    font-size: 25px;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+    min-height: calc(100vh - 116px);
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    border-bottom: 2px solid var(--border);
+}
+
+.hero-left {
+    padding: 8vw 4vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.small-title {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(55px, 8vw, 120px);
+    line-height: 0.85;
+    letter-spacing: -6px;
+    margin: 30px 0;
+}
+
+.hero h1 span {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--black);
+}
+
+.hero-description {
+    max-width: 520px;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.primary-button {
+    background: var(--black);
+    color: var(--background);
+    padding: 16px 22px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.primary-button:hover {
+    background: var(--background);
+    color: var(--black);
+    border: 2px solid var(--black);
+}
+
+.secondary-button {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.secondary-button:hover {
+    background: var(--black);
+    color: var(--background);
+    padding: 5px;
+}
+
+.hero-right {
+    background: var(--black);
+    color: var(--background);
+    border-left: 2px solid var(--border);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-logo {
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(70px, 11vw, 180px);
+    line-height: 0.72;
+    letter-spacing: -10px;
+    transform: rotate(-8deg);
+}
+
+.sticker {
+    position: absolute;
+    top: 10%;
+    right: 8%;
+    border: 3px solid var(--background);
+    padding: 15px;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 20px;
+    transform: rotate(10deg);
+}
+
+.hero-circle {
+    position: absolute;
+    bottom: 8%;
+    left: 8%;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: var(--background);
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Archivo Black";
+}
+
+
+/* =====================================================
+   MARQUEE
+   ===================================================== */
+
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 2px solid var(--border);
+    padding: 14px 0;
+    font-family: "Archivo Black";
+    font-size: 22px;
+}
+
+.marquee-track {
+    display: inline-block;
+    animation: ticker 25s linear infinite;
+}
+
+
+/* =====================================================
+   DROP SECTION
+   ===================================================== */
+
+.drop-section {
+    padding: 9vw 4vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5vw;
+    border-bottom: 2px solid var(--border);
+}
+
+.drop-title h2 {
+    font-family: "Archivo Black";
+    font-size: clamp(55px, 7vw, 100px);
+    line-height: 0.85;
+    letter-spacing: -5px;
+    margin: 25px 0;
+}
+
+.drop-title h2 span {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--black);
+}
+
+.drop-title p:last-child {
+    max-width: 450px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.drop-box {
+    min-height: 350px;
+    background: var(--black);
+    color: var(--background);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.drop-number {
+    font-size: 12px;
+}
+
+.drop-main-text {
+    font-family: "Archivo Black";
+    font-size: clamp(35px, 5vw, 70px);
+    line-height: 0.85;
+    letter-spacing: -3px;
+}
+
+.drop-bottom {
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   SHOP
+   ===================================================== */
+
+.shop-section {
+    padding: 8vw 4vw;
+    border-bottom: 2px solid var(--border);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-family: "Archivo Black";
+    font-size: clamp(50px, 7vw, 90px);
+    line-height: 0.85;
+    letter-spacing: -5px;
+    margin-top: 20px;
+}
+
+.section-header h2 span {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--black);
+}
+
+.filters {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.filter {
+    border: 1px solid var(--black);
+    padding: 9px 12px;
+    background: transparent;
+    font-size: 10px;
+}
+
+.filter:hover,
+.filter.active {
+    background: var(--black);
+    color: var(--background);
+}
+
+
+/* =====================================================
+   PRODUCTS
+   ===================================================== */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.product {
+    border: 1px solid var(--border);
+    background: #ffffff;
+}
+
+.product-image {
+    aspect-ratio: 1 / 1.05;
+    background: #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.product-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--black);
+    color: var(--background);
+    padding: 6px;
+    font-size: 9px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+
+/* =====================================================
+   MULTIPLE IMAGE ARROWS
+   ===================================================== */
+
+.image-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 40px;
+    height: 40px;
+
+    border: 2px solid var(--black);
+
+    background: rgba(255, 255, 255, 0.9);
+
+    color: var(--black);
+
+    font-size: 28px;
+    line-height: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 8;
+
+    transition: 0.2s ease;
+}
+
+.image-arrow:hover {
+    background: var(--black);
+    color: var(--background);
+}
+
+.image-prev {
+    left: 10px;
+}
+
+.image-next {
+    right: 10px;
+}
+
+
+/* =====================================================
+   IMAGE DOTS
+   ===================================================== */
+
+.image-dots {
+    position: absolute;
+
+    bottom: 12px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 6px;
+
+    z-index: 8;
+}
+
+.image-dot {
+    width: 8px;
+    height: 8px;
+
+    padding: 0;
+
+    border: 1px solid var(--black);
+
+    background: var(--background);
+
+    border-radius: 50%;
+
+    transition: 0.2s ease;
+}
+
+.image-dot:hover {
+    transform: scale(1.2);
+}
+
+.image-dot.active {
+    background: var(--black);
+}
+
+
+/* =====================================================
+   PRODUCT INFO
+   ===================================================== */
+
+.product-info {
+    padding: 16px;
+}
+
+.product-info h3 {
+    font-family: "Archivo Black";
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+    font-size: 9px;
+}
+
+.product-price {
+    font-weight: bold;
+    margin-top: 14px;
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   SIZE SELECTOR
+   ===================================================== */
+
+.size-title {
+    font-size: 9px;
+    font-weight: bold;
+
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.size-options {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.size-button {
+    width: 40px;
+    height: 34px;
+
+    border: 1px solid var(--black);
+
+    background: var(--background);
+
+    color: var(--black);
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.size-button:hover {
+    background: var(--black);
+    color: var(--background);
+}
+
+.size-button.selected {
+    background: var(--black);
+    color: var(--background);
+}
+
+
+/* =====================================================
+   ADD TO BAG
+   ===================================================== */
+
+.add-button {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    background: var(--black);
+
+    color: var(--background);
+
+    border: 0;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+.add-button:hover {
+    background: var(--background);
+
+    color: var(--black);
+
+    border: 2px solid var(--black);
+}
+
+
+/* =====================================================
+   FEATURES
+   ===================================================== */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 2px solid var(--border);
+}
+
+.feature {
+    padding: 4vw;
+    border-right: 2px solid var(--border);
+}
+
+.feature:last-child {
+    border-right: 0;
+}
+
+.feature span {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.feature h3 {
+    font-family: "Archivo Black";
+    font-size: 30px;
+    margin: 25px 0;
+}
+
+.feature p {
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   ABOUT
+   ===================================================== */
+
+.about-section {
+    padding: 10vw 4vw;
+    border-bottom: 2px solid var(--border);
+}
+
+.about-section h2 {
+    font-family: "Archivo Black";
+    font-size: clamp(55px, 8vw, 110px);
+    line-height: 0.83;
+    letter-spacing: -6px;
+    margin: 30px 0;
+}
+
+.about-section h2 span {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--black);
+}
+
+.about-text {
+    max-width: 650px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   CONTACT
+   ===================================================== */
+
+.contact-section {
+    padding: 8vw 4vw;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.contact-section h2 {
+    font-family: "Archivo Black";
+
+    font-size: clamp(50px, 7vw, 90px);
+
+    line-height: 0.85;
+
+    letter-spacing: -5px;
+
+    margin-top: 25px;
+}
+
+.contact-section h2 span {
+    color: transparent;
+
+    -webkit-text-stroke: 2px var(--black);
+}
+
+.contact-links {
+    min-width: 350px;
+}
+
+.contact-links a {
+    display: block;
+
+    padding: 20px 0;
+
+    border-bottom: 2px solid var(--black);
+
+    font-family: "Archivo Black";
+
+    font-size: 25px;
+}
+
+.contact-links a:hover {
+    background: var(--black);
+
+    color: var(--background);
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    background: var(--black);
+
+    color: var(--background);
+
+    padding: 25px 4vw;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   OVERLAY
+   ===================================================== */
+
+.overlay {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    z-index: 500;
+}
+
+.overlay.show {
+    display: block;
+}
+
+
+/* =====================================================
+   CART
+   ===================================================== */
+
+.cart {
+    position: fixed;
+
+    right: -500px;
+
+    top: 0;
+
+    width: min(500px, 100%);
+
+    height: 100vh;
+
+    background: var(--background);
+
+    z-index: 600;
+
+    transition: 0.3s ease;
+
+    border-left: 2px solid var(--black);
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.cart.open {
+    right: 0;
+}
+
+
+/* =====================================================
+   CART HEADER
+   ===================================================== */
+
+.cart-header {
+    padding: 25px;
+
+    border-bottom: 2px solid var(--black);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.cart-header h2 {
+    font-family: "Archivo Black";
+
+    font-size: 30px;
+}
+
+.cart-header button {
+    border: 0;
+
+    background: transparent;
+
+    font-size: 35px;
+}
+
+
+/* =====================================================
+   CART ITEMS
+   ===================================================== */
+
+.cart-items {
+    flex: 1;
+
+    padding: 20px;
+
+    overflow-y: auto;
+}
+
+.empty-cart {
+    color: var(--grey);
+
+    font-size: 12px;
+}
+
+.cart-item {
+    display: grid;
+
+    grid-template-columns: 75px 1fr auto;
+
+    gap: 12px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #999;
+}
+
+.cart-thumbnail {
+    width: 75px;
+
+    height: 75px;
+
+    background: #eeeeee;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: "Archivo Black";
+
+    font-size: 16px;
+
+    overflow: hidden;
+}
+
+.cart-thumbnail img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.cart-item h4 {
+    font-size: 12px;
+
+    margin-bottom: 8px;
+}
+
+.cart-item small {
+    font-size: 9px;
+
+    line-height: 1.7;
+}
+
+.remove-button {
+    font-size: 9px;
+
+    text-decoration: underline;
+
+    border: 0;
+
+    background: transparent;
+
+    height: fit-content;
+}
+
+
+/* =====================================================
+   CART FOOTER
+   ===================================================== */
+
+.cart-footer {
+    padding: 20px;
+
+    border-top: 2px solid var(--black);
+}
+
+.cart-total {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+.whatsapp-order {
+    width: 100%;
+
+    padding: 16px;
+
+    border: 0;
+
+    background: var(--black);
+
+    color: var(--background);
+
+    font-size: 11px;
+
+    font-weight: bold;
+}
+
+.whatsapp-order:hover {
+    background: var(--background);
+
+    color: var(--black);
+
+    border: 2px solid var(--black);
+}
+
+.cart-note {
+    text-align: center;
+
+    font-size: 9px;
+
+    margin-top: 10px;
+}
+
+
+/* =====================================================
+   MOBILE MENU
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+    .navbar nav {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+
+        width: 100%;
+
+        background: var(--background);
+
+        border-bottom: 2px solid var(--black);
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .navbar nav.open {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-left {
+        min-height: 75vh;
+    }
+
+    .hero-right {
+        min-height: 55vh;
+
+        border-left: 0;
+
+        border-top: 2px solid var(--black);
+    }
+
+    .hero-logo {
+        font-size: 25vw;
+    }
+
+
+    /* DROP */
+
+    .drop-section {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* PRODUCTS */
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* FEATURES */
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        border-right: 0;
+
+        border-bottom: 2px solid var(--black);
+    }
+
+    .feature:last-child {
+        border-bottom: 0;
+    }
+
+
+    /* CONTACT */
+
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .contact-links {
+        min-width: auto;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 500px) {
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .cart-button {
+        padding: 8px;
+    }
+
+
+    /* HERO */
+
+    .hero h1 {
+        font-size: 17vw;
+
+        letter-spacing: -3px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+
+    /* SHOP */
+
+    .section-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* DROP */
+
+    .drop-main-text {
+        font-size: 40px;
+    }
+
+
+    /* ABOUT / CONTACT */
+
+    .about-section h2,
+    .contact-section h2 {
+        letter-spacing: -3px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    /* SIZE BUTTONS */
+
+    .size-button {
+        width: 42px;
+
+        height: 36px;
+    }
+
+
+    /* IMAGE ARROWS */
+
+    .image-arrow {
+        width: 34px;
+
+        height: 34px;
+
+        font-size: 23px;
+    }
+
+}
+/* =====================================================
+   PRODUCT IMAGE ZOOM
+   ===================================================== */
+
+.zoomable-image {
+    cursor: zoom-in;
+}
+
+
+/* FULLSCREEN OVERLAY */
+
+.image-zoom-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.92);
+
+    z-index: 1000;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px;
+
+}
+
+.image-zoom-overlay.show {
+
+    display: flex;
+
+}
+
+
+/* ZOOM IMAGE */
+
+.image-zoom-overlay img {
+
+    max-width: 90vw;
+
+    max-height: 90vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    cursor: zoom-out;
+
+}
+
+
+/* CLOSE BUTTON */
+
+.zoom-close {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 25px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: 2px solid white;
+
+    background: black;
+
+    color: white;
+
+    font-size: 32px;
+
+    line-height: 1;
+
+    z-index: 1002;
+
+}
+
+
+/* LEFT / RIGHT BUTTONS */
+
+.zoom-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 50px;
+
+    height: 50px;
+
+    border: 2px solid white;
+
+    background: black;
+
+    color: white;
+
+    font-size: 35px;
+
+    z-index: 1002;
+
+}
+
+
+.zoom-arrow:hover,
+.zoom-close:hover {
+
+    background: white;
+
+    color: black;
+
+}
+
+
+.zoom-prev {
+
+    left: 25px;
+
+}
+
+
+.zoom-next {
+
+    right: 25px;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .image-zoom-overlay {
+
+        padding: 15px;
+
+    }
+
+    .image-zoom-overlay img {
+
+        max-width: 95vw;
+
+        max-height: 85vh;
+
+    }
+
+    .zoom-arrow {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 28px;
+
+    }
+
+    .zoom-prev {
+
+        left: 10px;
+
+    }
+
+    .zoom-next {
+
+        right: 10px;
+
+    }
+
+}
