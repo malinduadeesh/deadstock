@@ -21,7 +21,7 @@ const products = [
         category: "mens",
         price: 6500,
         sizes: ["S", "M", "L", "XL", "XXL"],
-        stock: 2,
+        stock: 5,
         tag: "LIMITED",
 
         images: [
