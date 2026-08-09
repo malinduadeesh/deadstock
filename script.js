@@ -120,6 +120,24 @@ const products = [
             "images/tee6-back.png",
             "images/tee6-detail.png"
         ]
+    },
+
+
+     {
+        id: 7,
+        name: "Men's striped Polo Tshirt",
+        category: "tops",
+        category: "mens",
+        price: 6500,
+        sizes: ["S", "M", "L", "XL", "XXL"],
+        stock: 5,
+        tag: "LIMITED",
+
+        images: [
+            "images/tee7-front.png",
+            "images/tee7-back.png",
+            "images/tee7-detail.png"
+        ]
     }
 
 ];
