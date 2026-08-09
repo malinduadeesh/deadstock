@@ -916,7 +916,7 @@ function sendWhatsAppOrder() {
 
 
     let message =
-        "Hi Deadstock Co.!%0A%0A";
+        "Hi Deadstock Clo.!%0A%0A";
 
 
     message +=
